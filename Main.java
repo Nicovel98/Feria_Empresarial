@@ -80,6 +80,7 @@ public class Main {
                 case 6:
                     feria.reporteEmpresasStands();
                     feria.reporteCalificaciones();
+                    feria.reporteVisitantes();
                     break;
             }
         } while (op != 7);

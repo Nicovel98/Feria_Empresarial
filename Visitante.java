@@ -30,4 +30,14 @@ public class Visitante {
 	public List<Stand> getStandsVisitados() {
 		return standsVisitados;
 	}
+
+	public List<String> getEmpresasVisitadas() {
+		List<String> empresas = new ArrayList<>();
+		for (Stand s : standsVisitados) {
+			if (s.getEmpresaAsignada() != null) {
+				empresas.add(s.getEmpresaAsignada().getNombre());
+			}
+		}
+		return empresas;
+	}
 }

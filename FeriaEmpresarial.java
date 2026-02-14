@@ -24,8 +24,8 @@ public class FeriaEmpresarial {
 		Stand std = buscarStand(numStand);
 
 		if (emp != null && std != null && !std.isOcupado()) {
-			std.setOcupado(true);
 			emp.setStandAsignado(std);
+			std.setEmpresaAsignada(emp);
 			return true;
 		}
 		return false;
@@ -57,6 +57,15 @@ public class FeriaEmpresarial {
 		System.out.println("\n--- RANKING DE CALIFICACIONES ---");
 		for (Empresa e : empresas) {
 			System.out.printf("Empresa: %s | Promedio: %.2f estrellas\n", e.getNombre(), e.getPromedioCalificacion());
+		}
+	}
+
+	public void reporteVisitantes() {
+		System.out.println("\n--- VISITANTES Y STANDS VISITADOS ---");
+		for (Visitante v : visitantes) {
+			System.out.println("Visitante: " + v.getNombre() + " | Stands visitados: " + v.getStandsVisitados().size());
+			System.out.println("Stands: " + v.getStandsVisitados());
+			System.out.println("Empresas visitadas: " + v.getEmpresasVisitadas());
 		}
 	}
 
